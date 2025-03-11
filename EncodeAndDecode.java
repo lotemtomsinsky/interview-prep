@@ -1,5 +1,3 @@
-package neetcode;
-
 import java.util.*;
 
 // https://neetcode.io/problems/string-encode-and-decode 
