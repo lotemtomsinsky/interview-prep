@@ -1,66 +1,41 @@
 // https://neetcode.io/problems/longest-repeating-substring-with-replacement
 
 import java.util.HashMap;
-import java.util.Map;
 
 public class LongestRepeatCharReplacement {
     public static int characterReplacement(String s, int k) {
-       int maxLength = 0;
-       
-       // find the most frequently occuring char in s so we can minimize # replacements needed
        HashMap<Character, Integer> occurences = new HashMap<>();
-       for (int i = 0; i < s.length(); i++)
-       {
-            if (occurences.containsKey(s.charAt(i)))
-            {
-                occurences.put(s.charAt(i), occurences.get(s.charAt(i)) + 1);
-            }
-            else
-            {
-                occurences.put(s.charAt(i), 1);
-            }
-       }
+       int maxLength = 0;
        int maxCount = 0;
-       char mostFreq = s.charAt(0); // just a default
-       for (Map.Entry<Character, Integer> entry : occurences.entrySet())
-       {
-            if (entry.getValue() > maxCount)
-            {
-                maxCount = entry.getValue();
-                mostFreq = entry.getKey();
-            }
-       }
-
-       // go through the string and do the K replacements
        char[] a = s.toCharArray();
-       int replaced = 0; 
-       for (int i = 0; i < a.length; i++)
+       int left = 0;
+       
+       for (int right = 0; right < a.length; right++)
        {
+            occurences.put(a[right], occurences.getOrDefault(a[right], 0) + 1);
+            maxCount = Math.max(maxCount, occurences.get(a[right]));
+           
             /*
-             * TODO: fix replacement logic, which includes somehow updating occurences map to check the conditions
-             * we need to replace if:
-             * 1. we haven't replaced up to k times yet
-             * 2. there's at least 2 unique charactres in the string 
+             * we compare the size of the current window - # occurences of the most frequent character in the window
+             * if that's bigger than k, then that means k replacements wont be enough for us to get a substring with 
+             * a unique character so we need to shrink the window.
+             * 
+             * While that's the case, keep shrinking the window, during which time we remove the character occurence
+             * from the map because we're not considering it anymore until the window size becomes valid
              */
-            if (replaced < k && occurences.size() > 2)
+            while ((right - left +1) - maxCount > k)
             {
-                if (a[i] != mostFreq) 
-                {
-                    a[i] = mostFreq;
-                    replaced++;
-                }
+                occurences.put(a[left], occurences.get(a[left]) - 1);
+                left++;
             }
-            else
-            {
-                break;
-            } 
+
+            /*
+             * when the window size becomes valid, compare the current window against the last recorded max window size
+             * and update accordingly
+             */
+            maxLength = Math.max(maxLength, right - left + 1);
         }
 
-        // TODO: implement the final part, checking for longest substring with 1 unique char 
-        // look through the new string for the longest substring with only 1 unique char
-        String newS = new String(a);
-        System.out.println(newS);
-       
        return maxLength;
     }
 
@@ -70,8 +45,13 @@ public class LongestRepeatCharReplacement {
         int k1 = 2;
         System.out.println(characterReplacement(s1, k1)); // expect 4
 
-        // String s2 = "AAABABB";
-        // int k2 = 1;
-        // System.out.println(characterReplacement(s2, k2)); // expect 4
+        String s2 = "AAABABB";
+        int k2 = 1;
+        System.out.println(characterReplacement(s2, k2)); // expect 5
+
+        String s3 = "KRSCDCSONAJNHLBMDQGIFCPEKPOHQIHLTDIQGEKLRLCQNBOHNDQGHJPNDQPERNFSSSRDEQLFPCCCARFMDLHADJADAGNNSBNCJQOF";
+        int k3 = 4;
+        System.out.println(characterReplacement(s3, k3)); // expect 7
+
     }
 }
