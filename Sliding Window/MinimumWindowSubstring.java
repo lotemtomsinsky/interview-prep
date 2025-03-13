@@ -10,57 +10,85 @@ public class MinimumWindowSubstring {
             return "";
         }
 
-        HashMap<Character, Integer> frequencies = new HashMap<>();
-        String result = "";
-        String shortestSub = s; // start it off here as the max value placeholder         
-
+        HashMap<Character, Integer> frequenciesT = new HashMap<>();
         // map to store all the chars in t and # times they occur
         for (char c : t.toCharArray())
         {
-            frequencies.put(c, frequencies.getOrDefault(c, 0) + 1);
+            frequenciesT.put(c, frequenciesT.getOrDefault(c, 0) + 1);
         }
 
+
+        HashMap<Character, Integer> frequenciesS = new HashMap<>();
+        int have = 0, need = frequenciesT.size();
+        int minLength = Integer.MAX_VALUE, minStart = 0;
         int left = 0;
-        boolean found = false;
+
+        
+        // this loop expands the window with the right pointer 
         for (int right = 0; right < s.length(); right++)
         {
+            char c = s.charAt(right);
             // if the character is a key, that means it's in t -> potential start for substring
-            if (frequencies.containsKey(s.charAt(right)))
+            if (frequenciesT.containsKey(c))
             {
-                // keep checking until either we've found all the chars contained in t or we've hit the end of s 
-                while (!frequencies.isEmpty() || right < s.length() - 1)
+                // update the count of this character
+                frequenciesS.put(c, frequenciesS.getOrDefault(c, 0) + 1);
+                // if it matches the count in t, then increase how many of t's characters we've seen
+                if (frequenciesS.get(c) == frequenciesT.get(c))
                 {
-                    left = right;
-                    // remove this occurence of the char from frequencies 
-                    frequencies.put(s.charAt(right), frequencies.get(s.charAt(right)) - 1);
-                    // if we've seen all the occurences of it, remove it from the map
-                    int f = frequencies.get(s.charAt(right)); 
-                    if (f == 0)
-                    {
-                        frequencies.remove(s.charAt(right)); 
-                    }
-                    
-                    right++;
-                }
-                // we found a valid substring. dont need to do right+1 because its incrememnted an extra time in the while loop above
-                String subString = s.substring(left, right);
-
-                // if it's shorter than the previously recorded substring, make this the new minimum one encountered
-                if (subString.length() <= shortestSub.length())
-                {
-                    shortestSub = subString;
-                    found = true; // if we make the swap at least once, then a valid substring exists 
+                    have++;
                 }
             }
-
+            
+            // When we have a valid window, try to contract it from the left.
+            while (have == need) {
+                // Update result if this window is smaller.
+                if (right - left + 1 < minLength) {
+                    minLength = right - left + 1;
+                    minStart = left;
+                }
+                
+                // Remove the leftmost character from the window.
+                char leftChar = s.charAt(left);
+                // if the leftmost char is one of the ones from the mapping, need to update the frequencies
+                if (frequenciesT.containsKey(leftChar)) {
+                    frequenciesS.put(leftChar, frequenciesS.get(leftChar) - 1);
+                    if (frequenciesS.get(leftChar) < frequenciesT.get(leftChar)) {
+                        have--;
+                    }
+                }
+                // shrink the window
+                left++;  
+            }
         }
 
-        if (found)
-        {
-            result = shortestSub;
-        }
-        return result;
+        /*
+         * check min length: if it's still Integer.MAX_VALUE return "" (no substring found)
+         * else return the substring formed from the left pointer + the length of the min substring
+         */ 
+        return minLength == Integer.MAX_VALUE ? "" : s.substring(minStart, minStart + minLength);
+    
     }
+
+    // public static boolean isValid(HashMap<Character, Integer> original, HashMap<Character, Integer> updated)
+    // {
+    //     for (Map.Entry<Character, Integer> entry : original.entrySet())
+    //     {
+    //         // not valid if the other map doesn't have this key, or has key but value < value in OG 
+    //         if (!updated.containsKey(entry.getKey()))
+    //         {
+    //             return false;
+    //         }
+    //         else
+    //         {
+    //             if (updated.get(entry.getKey()) < entry.getValue())
+    //             {
+    //                 return false;
+    //             }
+    //         }
+    //     }
+    //     return true;
+    // }
 
     public static void main(String[] args)
     {
@@ -72,8 +100,8 @@ public class MinimumWindowSubstring {
         // String t = "xy";
         // System.out.println(minWindow(s, t)); // expect ""
 
-        String s = "OUZODYXAZV";
-        String t = "XYZ";
-        System.out.println(minWindow(s, t)); // expect "YXAZ"
+        String s = "ABXAXZY";
+        String t = "XXYZ";
+        System.out.println(minWindow(s, t)); // expect "XZY"
     }
 }
