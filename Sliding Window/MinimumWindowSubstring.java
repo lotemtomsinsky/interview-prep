@@ -69,27 +69,7 @@ public class MinimumWindowSubstring {
         return minLength == Integer.MAX_VALUE ? "" : s.substring(minStart, minStart + minLength);
     
     }
-
-    // public static boolean isValid(HashMap<Character, Integer> original, HashMap<Character, Integer> updated)
-    // {
-    //     for (Map.Entry<Character, Integer> entry : original.entrySet())
-    //     {
-    //         // not valid if the other map doesn't have this key, or has key but value < value in OG 
-    //         if (!updated.containsKey(entry.getKey()))
-    //         {
-    //             return false;
-    //         }
-    //         else
-    //         {
-    //             if (updated.get(entry.getKey()) < entry.getValue())
-    //             {
-    //                 return false;
-    //             }
-    //         }
-    //     }
-    //     return true;
-    // }
-
+    
     public static void main(String[] args)
     {
         // String s = "xyz";
