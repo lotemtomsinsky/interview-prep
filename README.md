@@ -20,7 +20,7 @@ I am currently working through the NeetCode 150 problems and will continue updat
 
 ## _How to Use_
 
-If you're also going through NeetCode 150, feel free to reference these solutions and compare approaches. However, I highly recommend attempting the problems yourself before reviewing solutions!
+If you're also going through NeetCode 150, feel free to reference these solutions and compare approaches. Each solution file includes a link to the problem it's solving, however I highly recommend attempting the problems yourself before reviewing solutions!
 
 ## _Contributions_
 
