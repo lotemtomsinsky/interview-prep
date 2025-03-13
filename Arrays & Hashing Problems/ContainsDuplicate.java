@@ -1,3 +1,5 @@
+// https://neetcode.io/problems/duplicate-integer
+
 import java.util.HashMap;
 
 public class ContainsDuplicate {

@@ -1,6 +1,7 @@
+// https://neetcode.io/problems/three-integer-sum
+
 import java.util.*;
 
-// https://neetcode.io/problems/three-integer-sum
 public class ThreeSum {
 	public static List<List<Integer>> threeSum(int[] nums) {
         Set<List<Integer>> set = new HashSet<>(); // makes sure there are no duplicate triplets

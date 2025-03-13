@@ -1,6 +1,7 @@
+// // https://neetcode.io/problems/string-encode-and-decode 
+
 import java.util.*;
 
-// https://neetcode.io/problems/string-encode-and-decode 
 public class EncodeAndDecode {
     public static String encode(List<String> strs) {
         String[] updated = new String[strs.size()];

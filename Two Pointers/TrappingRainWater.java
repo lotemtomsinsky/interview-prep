@@ -1,8 +1,8 @@
+// https://neetcode.io/problems/trapping-rain-water
+
 import java.util.*;
 import java.util.Arrays;
 
-
-// https://neetcode.io/problems/trapping-rain-water
 public class TrappingRainWater {
 
 	 public static int trap(int[] height) {

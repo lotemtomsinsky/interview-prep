@@ -1,4 +1,5 @@
 // https://neetcode.io/problems/is-palindrome
+
 public class ValidPalindrome {
 	public static boolean isPalindrome(String s) {
 		

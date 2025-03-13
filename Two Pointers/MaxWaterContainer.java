@@ -1,6 +1,5 @@
-
-
 // https://neetcode.io/problems/max-water-container
+
 public class MaxWaterContainer {
 	 public static int maxArea(int[] heights) {
 	     

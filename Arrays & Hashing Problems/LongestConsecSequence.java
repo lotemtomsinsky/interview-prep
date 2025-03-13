@@ -1,9 +1,7 @@
+// https://neetcode.io/problems/longest-consecutive-sequence
 
 import java.util.HashSet;
 
-
-
-// https://neetcode.io/problems/longest-consecutive-sequence
 public class LongestConsecSequence {
 
 	 public static int longestConsecutive(int[] nums) {

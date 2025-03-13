@@ -1,3 +1,5 @@
+// https://neetcode.io/problems/two-integer-sum
+
 public class TwoSum {
     public int[] twoSum(int[] nums, int target) {
         int[] result = new int[2];
