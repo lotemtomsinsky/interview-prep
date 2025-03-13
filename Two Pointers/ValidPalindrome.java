@@ -1,5 +1,5 @@
 // https://neetcode.io/problems/is-palindrome
-public class Palindrome {
+public class ValidPalindrome {
 	public static boolean isPalindrome(String s) {
 		
         // ignore all non-alphanumeric chars & spaces. Make everything lower case, and then use regex to filter out non alphanumeric 

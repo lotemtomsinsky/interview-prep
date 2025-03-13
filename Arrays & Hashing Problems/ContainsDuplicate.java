@@ -1,6 +1,6 @@
 import java.util.HashMap;
 
-public class IsDuplicate {
+public class ContainsDuplicate {
     public boolean hasDuplicate(int[] nums) {
         HashMap<Integer, Integer> freq = new HashMap<>();
 
