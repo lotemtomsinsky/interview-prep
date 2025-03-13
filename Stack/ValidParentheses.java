@@ -5,7 +5,6 @@ import java.util.Stack;
 
 // https://neetcode.io/problems/validate-parentheses
 
-
 public class ValidParentheses {
     public static boolean isValid(String s) {
         HashMap<Character, Character> mapping = new HashMap<>();
