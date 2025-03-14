@@ -9,9 +9,9 @@ This repository contains my solutions to the NeetCode 150 problems, a curated se
 
 ## _Progress_
 
-I am currently working through the NeetCode 150 problems and will continue updating this repository as I progress.
+I am currently working through the NeetCode 150 problems in Java and will continue updating this repository as I progress.
 
-✅ Completed: Arrays & Hashing, Two Pointers, Sliding window
+✅ Completed: Arrays & Hashing, Two Pointers, Sliding Window
 
 🚧 In progress: Stack, Linked List
 
