@@ -18,30 +18,36 @@ public class DailyTemperatures {
             }
             else
             {
+                // store which day we're on
                 s.push(i);
                 int j = i+1;
 
+                // starting the next day, keep iterating until we find an exceeding temp or we reach the end of the list 
                 while (temperatures[j] <= temperatures[i] && j < temperatures.length - 1)
                 {
                     j++;
                 }
 
+                // if the case is that an exceeding temp is found, push the day it's on onto the stack
                 if (temperatures[j] > temperatures[i])
                 {
                     s.push(j);
                 }
-
+                // if the case is that no exceeding temp is found, set the result to 0
                 if (s.size() == 1)
                 {
                     result[i] = 0;
                 }
                 else
                 {
+                    // the top of the stack will be the latter day
                     int foundDay = s.pop();
                     int initDay = s.pop();
+                    // the diff between the days is how many days it took for it to get warmer
                     result[i] = foundDay - initDay;
                 }
             }
+            // clear because if no exceeding temp is found, the stack will have an extra element remaining since the pops aren't performed
             s.clear();
         }
         
