@@ -2,6 +2,8 @@ package Stack;
 
 import java.util.Stack;
 
+// https://neetcode.io/problems/largest-rectangle-in-histogram
+
 public class LargestRectangleInHistogram {
 
     // brute force approach, O(n^2) time complexity
