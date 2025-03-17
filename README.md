@@ -13,9 +13,9 @@ I am currently working through the NeetCode 150 problems in Java and will contin
 
 ✅ Completed: Arrays & Hashing, Two Pointers, Sliding Window
 
-🚧 In progress: Stack, Linked List, Heap/Priority Queue
+🚧 In progress: Stack, Linked List
 
-🔜 Upcoming: Binary Search, Trees, Backtracking, Tries, Graphs, Advanced Graphs, 1-D DP, 2-D DP, Greedy, Intervals, Math & Geometry, Bit Manipulation
+🔜 Upcoming: Binary Search, Trees, Heap/Priority Queue, Backtracking, Tries, Graphs, Advanced Graphs, 1-D DP, 2-D DP, Greedy, Intervals, Math & Geometry, Bit Manipulation
 
 
 ## _How to Use_
