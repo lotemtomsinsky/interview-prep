@@ -11,11 +11,11 @@ This repository contains my solutions to the NeetCode 150 problems, a curated se
 
 I am currently working through the NeetCode 150 problems in Java and will continue updating this repository as I progress.
 
-✅ Completed: Arrays & Hashing, Two Pointers, Sliding Window
+✅ Completed: Arrays & Hashing, Two Pointers, Sliding Window, Stack
 
-🚧 In progress: Stack, Linked List
+🚧 In progress: Binary Search, Linked List
 
-🔜 Upcoming: Binary Search, Trees, Heap/Priority Queue, Backtracking, Tries, Graphs, Advanced Graphs, 1-D DP, 2-D DP, Greedy, Intervals, Math & Geometry, Bit Manipulation
+🔜 Upcoming: Trees, Heap/Priority Queue, Backtracking, Tries, Graphs, Advanced Graphs, 1-D DP, 2-D DP, Greedy, Intervals, Math & Geometry, Bit Manipulation
 
 
 ## _How to Use_
