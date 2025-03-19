@@ -1,4 +1,4 @@
-package NeetCode150.BinarySearch;
+package BinarySearch;
 
 // https://neetcode.io/problems/find-target-in-rotated-sorted-array
 
