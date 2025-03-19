@@ -2,7 +2,7 @@ package BinarySearch;
 
 // https://neetcode.io/problems/find-minimum-in-rotated-sorted-array
 
-public class FindMinInRotatedArray {
+public class FindMinInRotatedSortedArray {
     /*
      * want to perform binary search to find the point at which nums[i] > nums[i + 1], because this is where the
      * sorting gets disrupted due to the rotations. then, i + 1 is the index at which the min value of the array 
