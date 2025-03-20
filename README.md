@@ -1,17 +1,15 @@
-# **Interview Question Solutions**
+# **NeetCode Solutions**
 
 Welcome to my intreview solutions repository! 🚀 
 
 
 ## *About This Repository*
 
-As I work through various reasources for interview prep, this repository contains my solutions so far. At the moment, my focus is on the NeetCode 150 problems and the LeetCode SQL 50 Study plan. These are both curated sets of essential coding problems designed to improve problem-solving skills and prepare for technical interviews. The goal is to solidify my understanding of data structures and algorithms as well as SQL while maintaining clean, well-documented code.
+As I work through various reasources for interview prep, this repository contains my solutions so far. At the moment, my focus is on the NeetCode 150 problems. This is a curated set of essential coding problems designed to improve problem-solving skills and prepare for technical interviews. The goal is to solidify my understanding of data structures and algorithms while maintaining clean, well-documented code.
 
 ## _Progress_
 
-I am currently working through the NeetCode 150 problems in Java and the LeetCode SQL 50 with MySQL. I will continue updating this repository as I progress.
-
-_NeetCode 150_
+I am currently working through the NeetCode 150 problems in Java and I will continue updating this repository as I progress.
 
 ✅ Completed: Arrays & Hashing, Two Pointers, Sliding Window, Stack
 
@@ -19,13 +17,6 @@ _NeetCode 150_
 
 🔜 Upcoming: Trees, Heap/Priority Queue, Backtracking, Tries, Graphs, Advanced Graphs, 1-D DP, 2-D DP, Greedy, Intervals, Math & Geometry, Bit Manipulation
 
-_LeetCode SQL 50_
-
-✅ Completed: Select, Basic Joins
-
-🚧 In progress: Basic Aggregate Functions
-
-🔜 Upcoming: Sorting and Grouping, Advanced Select and Joins, Subqueries, Advanced String Functions/Regex/Clause
 
 ## _How to Use_
 
@@ -37,7 +28,6 @@ This repository is primarily for personal learning and progress tracking, but if
 
 ## _Resources_
 🔗 https://neetcode.io/practice
-🔗 https://leetcode.com/studyplan/top-sql-50/
 
 ### __Contact__
 
