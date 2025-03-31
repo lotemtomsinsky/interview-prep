@@ -1,3 +1,9 @@
+/*
+ * The idea behind bubble sort is starting from the first element of the array, compare it to the next element beside it. 
+ * As long as current > adjacent, swap those two. Do this n - 1 times (since largest element is bubbled up, it's considered
+ * sorted) to make sure the list is fully sorted. Add in a swapped condition, because if the inner loop made no swaps then
+ * all elements are in their appropriate spots, and we can avoid extra computation.
+ */
 public class BubbleSort {
     
     public static void sort(int[] array)
