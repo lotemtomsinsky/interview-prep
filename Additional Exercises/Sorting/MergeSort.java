@@ -1,7 +1,7 @@
 /*
  * The idea behind this sorting algorithm is to recursively split the list into two halves until you're left with single elements, in which case those are considered 
  * sorted. Then, you merge the sorted elements from left and right subarrays in ascending order, and this propogates up through the calls until the entire array is sorted.
- * For this we need to implement 3 methods: mergesort which makes the recursive call, partition which splits the array into subarrays, and merge which combines the 
+ * For this we need to implement 2 methods: mergesort which makes the recursive call, and merge which combines the subarrays and sorts them
  * subarrays back together
  */
 
